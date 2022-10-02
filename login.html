@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="/images/favicon.png"/>
     <title>Raiffeisen Login</title>
 </head>
-<body class="loginBackground">
+<body class="loginBackground" onload="videoValidator()">
     <div class="loginBg">
       <div class="buttonBg">
         <a href="login.html" class="button">E-banking</a>
@@ -38,46 +38,6 @@
  </script> -->
  <!-- /button -->
  <script src="https://www.youtube.com/iframe_api"></script>
- <script>
-   chatLocationData = {
-     accountName: "demo",
-     domain: "demo.spitch.chat",
-     location: "Raiffeisen"
-   };
-   let x=chatLocationData.location;
-   function changeScript(){
-     x="FAQKanton";
-     console.log(x);
-   }
-   (function () {
-       var d = document.createElement("script");
-       d.type = "text/javascript";
-       d.src = "https://demo.spitch.chat/js/button.js";
-       document.getElementsByTagName("head")[0].appendChild(d);
-   })();
-   function onYouTubeIframeAPIReady() {
-       player = new YT.Player('videoContainer', {
-           height: '300',
-           width: '500',
-           videoId: 'OP2vT9cwaVU',
-           events: {
-               'onStateChange': changeScript
-           }
-       });
-   }
- 
-   function onPlayerStateChange(event) {
- 
-     if (event.data == YT.PlayerState.PLAYING) {
-        alert('video started');
-        playing = true;
-       }
- 
-     else if(event.data == YT.PlayerState.PAUSED){
-           alert('video paused');
-           playing = false;
-      }
- }
- </script>
+ <script src="index.js"></script>
 </body>
 </html>
